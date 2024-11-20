@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode Challenge Tracker 💻</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHq6iE/XcDg2vG7Pp+gAX9NzA6Vc9WPNtX8wGkK0a7IhM7X2fHlwk+kl8jlFrVBGk5w+uSkg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1><i class="fas fa-code"></i> LeetCode Challenge Tracker</h1>
+            <p>Track your progress and compete with friends!</p>
+        </header>
+
+        <!-- Settings Section -->
+        <section class="settings">
+            <h2><i class="fas fa-cogs"></i> Challenge Settings</h2>
+            <div class="settings-menu">
+                <button id="addMemberBtn"><i class="fas fa-user-plus"></i> Add Member</button>
+                <button id="removeMemberBtn"><i class="fas fa-user-minus"></i> Remove Member</button>
+                <button id="setProblemCountBtn"><i class="fas fa-tasks"></i> Set Problem Count</button>
+            </div>
+
+            <!-- Add Member Modal -->
+            <div id="addMemberModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeAddMember">&times;</span>
+                    <h3><i class="fas fa-user-plus"></i> Add New Member</h3>
+                    <input type="text" id="newMemberName" placeholder="Enter Member Name">
+                    <button id="confirmAddMember"><i class="fas fa-check"></i> Add Member</button>
+                </div>
+            </div>
+
+            <!-- Remove Member Modal -->
+            <div id="removeMemberModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeRemoveMember">&times;</span>
+                    <h3><i class="fas fa-user-minus"></i> Remove Member</h3>
+                    <select id="memberToRemove">
+                        <!-- Options populated by JavaScript -->
+                    </select>
+                    <button id="confirmRemoveMember"><i class="fas fa-trash"></i> Remove Member</button>
+                </div>
+            </div>
+
+            <!-- Set Problem Count Modal -->
+            <div id="setProblemCountModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeSetProblemCount">&times;</span>
+                    <h3><i class="fas fa-tasks"></i> Set Total Problem Count</h3>
+                    <input type="number" id="totalProblemCount" min="1" value="50">
+                    <button id="confirmSetProblemCount"><i class="fas fa-check"></i> Set Problem Count</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenge Goal Display -->
+        <section class="challenge-goal">
+            <h2>🎯 Total Challenge Goal: <span id="totalProblems">50</span> Problems</h2>
+        </section>
+
+        <!-- Winners Section -->
+        <section class="winners">
+            <h2>🏆 Challenge Winners</h2>
+            <div id="winnersList">
+                <!-- Winners will be displayed here -->
+            </div>
+        </section>
+
+        <!-- Members Progress Section -->
+        <section class="members-progress">
+            <h2>📈 Member Progress</h2>
+            <div id="membersList">
+                <!-- Members and their progress will be displayed here -->
+            </div>
+        </section>
+
+        <!-- Reset Challenge Section -->
+        <section class="reset-challenge">
+            <h2>🔄 Reset Challenge</h2>
+            <div class="reset-container">
+                <input type="checkbox" id="confirmReset">
+                <label for="confirmReset">I confirm I want to reset the entire challenge</label>
+                <button id="resetChallengeBtn"><i class="fas fa-redo"></i> Reset Challenge</button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 LeetCode Challenge Tracker. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
